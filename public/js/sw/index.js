@@ -40,3 +40,8 @@ self.addEventListener('fetch', function(event) {
 
 // TODO: listen for the "message" event, and call
 // skipWaiting if you get the appropriate message
+self.addEventListener('message', e => {
+  if (e.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
+});
